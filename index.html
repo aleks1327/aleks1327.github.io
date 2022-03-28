@@ -176,6 +176,31 @@ $fp=fopen("baza.txt","a");
 $test=fwrite($fp,$st);
 echo"<h2 align='center' >Ви ввели :".$_POST['name2'].";".$_POST['name1'].";".$_POST['email'].";".4_POST['password']."</h2>";
 ?>
+ <?php
+$log_path='log.txt';
+$user_ip=getenv(REMOTE_ADDR);
+$user_brouser=getenv(HTTP_USER_AGENT);
+$curent_time=date("ymd H:i:s");
+$log_string="$user_ip|$user_brouser|$curent_time|\r\n";
+$file=fopen($log_path,"a");
+fwrite($file, $log_string, strlen($log_string));
+fclose($file);
+?>
+<?php
+echo '<h1 align="center">Хто до нас на сайт заходив !</h1>';
+echo '<TABLE align="center" border="1" width="600">';
+                echo'<tr>';
+echo '<td align="center">IP Adress</td>';
+echo '<td align="center">Brouser</td>';
+echo '<td align="center">Дата</td>';
+              echo'</tr>';
+echo '<td>'.$trs[0].'</td>';
+echo '<td>'.$trs[1].'</td>';
+echo '<td>'.$trs[2].'</td>';
+             echo'</tr>';
+}
+echo '</table>';
+?>
 </h1>
  </td>
 </tr>
