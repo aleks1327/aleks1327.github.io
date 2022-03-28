@@ -147,7 +147,16 @@ window.onload=function(){
  Це дає гарну можливість привернути увагу до сайту з боку великої кількості зацікавлених відвідувачів.</p>
 
 <p>Звертайтесь до веб-студії Web-DECO, і ми з радістю застосуємо свої здібності і досвід для вирішення Ваших задач! Ми можемо створити сайт, який стане для Вас вдалою інвестицією.)</p>
-</td>
+ <h1 align="center">Дякуємо за реєстрацію !</h1>
+ <?php
+$st=$_POST['name2'].";".$_POST['name1'].";".$_POST['email'].";".4_POST['password']."\n";
+
+$fp=fopen("baza.txt","a");
+$test=fwrite($fp,$st);
+echo"<h2 align='center' >Ви ввели :".$_POST['name2'].";".$_POST['name1'].";".$_POST['email'].";".4_POST['password']."</h2>";
+?>
+</h1>
+ </td>
 </tr>
 <tr>
 <td colspan="2" valign="middle" height="90">
